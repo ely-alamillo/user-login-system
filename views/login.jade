@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h2.page-header login
+  p please login below
+  form(method='post', action='/users/login')
+    form-group
+      label username
+      input.form-control(name='username', type='text', placeholder='enter username')
+    form-group
+      label password
+      input.form-control(name='password', type='text', placeholder='enter password')
+    input.btn.btn-primary(type='submit', name='submit', value='register')

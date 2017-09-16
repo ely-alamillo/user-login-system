@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h2.page-header register
+  p register using the form below
+  if errors
+    each error, i in errors
+      div.alert.alert-danger #{error.msg}
+  form(method='post', action='/users/register',enctype='multipart/form-data')
+    .form-group
+      label Name
+      input.form-control(name='name', type='text', placeholder='enter name')
+    form-group
+      label email
+      input.form-control(name='email', type='text', placeholder='enter email')
+    form-group
+      label username
+      input.form-control(name='username', type='text', placeholder='enter username')
+    form-group
+      label password
+      input.form-control(name='password', type='text', placeholder='enter password')
+    form-group
+      label password check
+      input.form-control(name='password2', type='text', placeholder='enter password check')
+    form-group
+      label profile image
+      input.form-control(name='profileimage', type='file')
+    input.btn.btn-primary(type='submit', name='submit', value='register')
